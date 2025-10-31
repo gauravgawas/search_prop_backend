@@ -1,5 +1,5 @@
 # 1️⃣ Build Stage
-FROM eclipse-temurin:17-jdk-alpine AS builder
+FROM eclipse-temurin:21-jdk-alpine AS builder
 
 # Install Maven (no need for ./mvnw)
 RUN apk add --no-cache maven
