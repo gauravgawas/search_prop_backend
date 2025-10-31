@@ -22,7 +22,7 @@ public class UserService {
     private final UserRepository userRepo;
     private final SecurityConfig securityConfig;
     private final JwtUtil jwt;
-    Map<String, Object> res = new HashMap<>();
+
     public UserService(UserRepository userRepo,SecurityConfig securityConfig,JwtUtil jwt) {
     	this.userRepo=userRepo;
     	this.securityConfig=securityConfig;
@@ -30,6 +30,7 @@ public class UserService {
     }
 
     public Map<String,Object> registerUser(User user) {
+        Map<String, Object> res = new HashMap<>();
         if (userRepo.existsByEmail(user.getEmail())) {
         	res.put("Status", "FAIL");
         	res.put("Message", "Email already exists!");
@@ -49,6 +50,7 @@ public class UserService {
         return res;
     }
     public Map<String,Object> loginUser(User user) {
+        Map<String, Object> res = new HashMap<>();
     	List<User> users = userRepo.findByUsername(user.getUsername());
        
         if (users.isEmpty()) {
