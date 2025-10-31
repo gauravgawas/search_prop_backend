@@ -22,7 +22,7 @@ public class GeometryData {
 	@Column
 	private String username;
 	
-	@Column(columnDefinition = "LONGTEXT")
+	@Column(columnDefinition = "TEXT")
 	private String geom;
 
 }
