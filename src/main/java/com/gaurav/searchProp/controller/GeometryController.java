@@ -76,6 +76,14 @@ public class GeometryController {
 		return geomService.deleteMyGeom(data);
 
 	}
+	@PostMapping("/deleteAllGeom")
+	public Map<String, Object> deleteAllGeometry() {
+	
+		
+		return geomService.deleteAllGeom();
+
+	}
+
 
 	@GetMapping("/getAllGeom")
 	public Map<String, Object> getAllGeometry(@RequestHeader("Authorization") String authHeader) {

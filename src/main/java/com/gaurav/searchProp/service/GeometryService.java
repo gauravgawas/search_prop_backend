@@ -88,4 +88,18 @@ public class GeometryService {
 		
 		return res;
 	}
+
+	public Map<String, Object> deleteAllGeom() {
+		Map<String, Object> res = new HashMap<>();
+		try {
+			geomRepo.deleteAll();
+			res.put("Status", "OK");
+			res.put("Message","All Data deleted successfully");
+		}catch(Exception e) {
+			res.put("Status", "FAIL");
+			res.put("Message", "Failed to delete all data");
+		}
+		
+		return res;
+	}
 }
